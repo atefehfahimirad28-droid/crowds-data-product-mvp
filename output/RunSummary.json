@@ -1,0 +1,87 @@
+{
+  "run_id": "RUN-2026-09-17-DEMO-01",
+  "run_started_at": "2026-09-17T18:00:00Z",
+  "run_ended_at": "2026-09-17T18:04:20Z",
+  "metrics": {
+    "participating_devices": 16,
+    "cue_delivery": {
+      "delivered": 53,
+      "expected": 55,
+      "overall_rate_pct": 96.36,
+      "by_cue": {
+        "CUE-01": {
+          "received": 15,
+          "expected": 16,
+          "delivery_rate_pct": 93.75
+        },
+        "CUE-02": {
+          "received": 7,
+          "expected": 8,
+          "delivery_rate_pct": 87.5
+        },
+        "CUE-03": {
+          "received": 16,
+          "expected": 16,
+          "delivery_rate_pct": 100.0
+        },
+        "CUE-04": {
+          "received": 15,
+          "expected": 15,
+          "delivery_rate_pct": 100.0
+        }
+      }
+    },
+    "delivery_latency": {
+      "median_ms": 149.5,
+      "median_by_cue_ms": {
+        "CUE-01": 152.0,
+        "CUE-02": 176.0,
+        "CUE-03": 108.0,
+        "CUE-04": 177.0
+      }
+    },
+    "observed_response": {
+      "responses": 31,
+      "expected": 55,
+      "overall_rate_pct": 56.36,
+      "by_cue": {
+        "CUE-01": {
+          "responded": 11,
+          "expected": 16,
+          "response_rate_pct": 68.75
+        },
+        "CUE-02": {
+          "responded": 6,
+          "expected": 8,
+          "response_rate_pct": 75.0
+        },
+        "CUE-03": {
+          "responded": 1,
+          "expected": 16,
+          "response_rate_pct": 6.25
+        },
+        "CUE-04": {
+          "responded": 13,
+          "expected": 15,
+          "response_rate_pct": 86.67
+        }
+      }
+    }
+  },
+  "data_quality": {
+    "duplicate_event_records": 2,
+    "missing_run_id_records": 1,
+    "missing_device_id_records": 1,
+    "negative_latency_records": 1,
+    "invalid_client_timestamp_records": 1,
+    "possible_semantic_duplicate_receipts": 2
+  },
+  "assumptions": [
+    "device_id represents a unique participating device.",
+    "Cue target_zone defines the eligible audience.",
+    "A device with an explicit left_event is excluded from later cue populations.",
+    "Each device is counted at most once per cue for delivery coverage.",
+    "Negative latency values are excluded from latency metrics.",
+    "Observed response rate assumes cues are response-capable; this should be validated with product metadata."
+  ]
+}
